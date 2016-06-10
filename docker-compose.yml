@@ -1,0 +1,22 @@
+my-node-app:
+  image: sammons/my-node-app
+  volumes:
+    - .:/usr/src/app
+  ports:
+    - "3900:3900"
+  links:
+   - postgres
+
+my-cloj-app:
+  image: sammons/my-cloj-app
+  volumes:
+    - .:/usr/src/app
+  ports:
+    - "4000:4000"
+  links:
+   - postgres
+
+postgres:
+  image: postgres
+  ports:
+    - "5432:5432"
