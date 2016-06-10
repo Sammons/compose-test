@@ -1,10 +1,15 @@
 my-node-app:
   image: sammons/my-node-app
   volumes:
+  # my-machine-path : path-inside-image
     - .:/usr/src/app
   ports:
+  # port inside container : port in vm
     - "3900:3900"
   links:
+  # DNS resolve postgres to wherever postgres is
+  # note, without net: host 127.0.0.1 will not work for
+  # containers
    - postgres
 
 my-cloj-app:
