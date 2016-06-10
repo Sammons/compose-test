@@ -1,5 +1,7 @@
 my-node-app:
   image: sammons/my-node-app
+  environment:
+    - NODE_ENV=docker
   volumes:
   # my-machine-path : path-inside-image
     - .:/usr/src/app
